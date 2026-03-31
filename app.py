@@ -19,7 +19,7 @@ model, scaler = load_model()
 # Controls
 col1, col2 = st.columns([1,3])
 with col1:
-    st.metric("Accuracy", "94.4%")
+    #st.metric("Accuracy", "94.4%")
     n_samples = st.slider("Test packets", 10, 100, 25)
     
 # Generate test traffic & predict
