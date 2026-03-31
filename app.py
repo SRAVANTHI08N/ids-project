@@ -4,8 +4,8 @@ import numpy as np
 import pandas as pd
 
 st.set_page_config(page_title="IDS Dashboard", layout="wide")
-st.title("AI-Powered Intrusion Detection System")
-st.markdown("**94.4% Accurate • NSL-KDD Trained • Real-time Analysis**")
+st.title("Intrusion Detection System")
+st.markdown("NSL-KDD Trained • Real-time Analysis")
 
 @st.cache_resource
 def load_model():
