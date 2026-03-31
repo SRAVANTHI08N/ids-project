@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 
 st.set_page_config(page_title="IDS Dashboard", layout="wide")
-st.title("🚨 AI-Powered Intrusion Detection System")
+st.title("AI-Powered Intrusion Detection System")
 st.markdown("**94.4% Accurate • NSL-KDD Trained • Real-time Analysis**")
 
 @st.cache_resource
@@ -14,7 +14,7 @@ def load_model():
     return model, scaler
 
 model, scaler = load_model()
-st.success("✅ Model loaded: 94.4% accuracy")
+#st.success("Model loaded: accuracy")
 
 # Controls
 col1, col2 = st.columns([1,3])
@@ -30,10 +30,10 @@ threats = np.sum(predictions)
 risk_score = np.mean(model.predict_proba(X_scaled)[:,1])
 
 col1, col2, col3 = st.columns(3)
-col1.metric("🛡️ Normal", n_samples-threats)
-col2.metric("🚨 Threats", threats)
-col3.metric("📊 Risk Score", f"{risk_score:.1%}")
+col1.metric("Normal", n_samples-threats)
+col2.metric("Threats", threats)
+col3.metric("Risk Score", f"{risk_score:.1%}")
 
 st.bar_chart(pd.DataFrame({'Risk': model.predict_proba(X_scaled)[:,1]}))
 
-st.info("👆 **Resume ready**: GitHub this + video demo = interview magnet!")
+#st.info("👆 **Resume ready**: GitHub this + video demo = interview magnet!")
